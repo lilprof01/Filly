@@ -68,7 +68,11 @@ const Form = () => {
     <div>
       {showModal && <Modal message="Thank you for your message. We'll get back to you as soon as possible." />}
       <form onSubmit={handleSubmit}>
-        <h1>Contact Us</h1>
+        <h1 style={{
+          color: 'hsl(169, 82%, 27%)',
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+        }}>Contact Us</h1>
         {/* Name */}
         <div className="double-input">
           <div className="input-div" id="1">
