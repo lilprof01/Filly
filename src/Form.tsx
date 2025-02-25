@@ -136,11 +136,11 @@ const Form = () => {
                 ref={radioRef1}
                 onClick={() => handleActive("1")}
                 type="radio"
-                name="generalEnquiry"
+                name="query"
                 value="1"
                 id="generalEnquiry"
               />
-              <label htmlFor="generalEnquiry">General Enquiry</label>
+              <label>General Enquiry</label>
             </div>
 
             <div className={`query ${active === "2" ? "active" : ""}`}>
@@ -148,11 +148,11 @@ const Form = () => {
                 ref={radioRef2}
                 onClick={() => handleActive("2")}
                 type="radio"
-                name="supportRequest"
+                name="query"
                 value="2"
                 id="supportRequest"
               />
-              <label htmlFor="supportRequest">Support Request</label>
+              <label>Support Request</label>
             </div>
           </div>
           {errorMessage === "4" &&<Error errorMessage="Please select a query type" role="alert" ariaLive="assertive" id="errorMessage" />}
