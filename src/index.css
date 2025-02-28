@@ -20,6 +20,12 @@ body {
   width: 45vw;
 }
 
+@media (max-width: 1023px){
+  .container{
+    width: 90vw;
+  }
+}
+
 form{
   background-color: white;
   padding: 1.5rem;;
@@ -28,15 +34,17 @@ form{
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-  gap: 10px;
+  gap: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 label{
-  font-size: normal;
+  font-size: smaller;
+  font-weight: 400;
   font-weight: 600;
   opacity: 0.7;
+  color: hsl(148, 38%, 20%);
 }
 
 .error{
