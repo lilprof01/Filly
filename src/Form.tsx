@@ -65,7 +65,7 @@ const Form = () => {
   };
 
   return (
-    <div className="container">
+    <main className="container">
       {showModal && <Modal message="Thank you for your message. We'll get back to you as soon as possible." />}
       <form onSubmit={handleSubmit}>
         <h1 style={{
@@ -185,7 +185,7 @@ const Form = () => {
 
         <button type="submit">Submit</button>
       </form>
-    </div>
+    </main>
   );
 };
 
