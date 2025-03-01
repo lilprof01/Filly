@@ -26,7 +26,7 @@ const Form = () => {
 
   const handleErrormessage = (id: string): void => {
     setErrorMessage(id);
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +43,10 @@ const Form = () => {
       handleE("3");
       handleErrormessage("3");
       emailRef.current?.setAttribute("aria-invalid", "true");
-    } else if (radioRef1.current?.checked === false && radioRef2.current?.checked === false) {
+    } else if (
+      radioRef1.current?.checked === false &&
+      radioRef2.current?.checked === false
+    ) {
       handleE("4");
       handleErrormessage("4");
     } else if (messageRef.current?.value === "") {
@@ -66,13 +69,19 @@ const Form = () => {
 
   return (
     <main className="container">
-      {showModal && <Modal message="Thank you for your message. We'll get back to you as soon as possible." />}
+      {showModal && (
+        <Modal message="Thank you for your message. We'll get back to you as soon as possible." />
+      )}
       <form onSubmit={handleSubmit}>
-        <h1 style={{
-          color: 'hsl(169, 82%, 27%)',
-          fontSize: '1.5rem',
-          fontWeight: 'bold',
-        }}>Contact Us</h1>
+        <h1
+          style={{
+            color: "hsl(169, 82%, 27%)",
+            fontSize: "1.5rem",
+            fontWeight: "bold",
+          }}
+        >
+          Contact Us
+        </h1>
         {/* Name */}
         <div className="double-input">
           <div className="input-div" id="1">
@@ -86,7 +95,14 @@ const Form = () => {
               name="firstName"
               placeholder="e.g John"
             />
-            {errorMessage === "1" && <Error errorMessage="This field is required" role="alert" ariaLive="assertive" id="errorMessage" />}
+            {errorMessage === "1" && (
+              <Error
+                errorMessage="This field is required"
+                role="alert"
+                ariaLive="assertive"
+                id="errorMessage"
+              />
+            )}
           </div>
 
           <div className="input-div" id="2">
@@ -100,7 +116,14 @@ const Form = () => {
               name="lastName"
               placeholder="e.g Doe"
             />
-            {errorMessage === "2" && <Error errorMessage="This field is required" role="alert" ariaLive="assertive" id="errorMessage" />}
+            {errorMessage === "2" && (
+              <Error
+                errorMessage="This field is required"
+                role="alert"
+                ariaLive="assertive"
+                id="errorMessage"
+              />
+            )}
           </div>
         </div>
 
@@ -116,7 +139,14 @@ const Form = () => {
             name="email"
             placeholder="email@example.com"
           />
-          {errorMessage === "3" && <Error errorMessage="Please enter a valid email address" role="alert" ariaLive="assertive" id="errorMessage" />}
+          {errorMessage === "3" && (
+            <Error
+              errorMessage="Please enter a valid email address"
+              role="alert"
+              ariaLive="assertive"
+              id="errorMessage"
+            />
+          )}
         </div>
 
         {/* Query */}
@@ -131,31 +161,44 @@ const Form = () => {
             Query Type<span>*</span>
           </label>
           <div className="double-input">
-            <div className={`query ${active === "1" ? "active" : ""}`}>
+            <div
+              onClick={() => handleActive("1")}
+              className={`query ${active === "1" ? "active" : ""}`}
+            >
               <input
                 ref={radioRef1}
-                onClick={() => handleActive("1")}
                 type="radio"
                 name="query"
                 value="1"
                 id="generalEnquiry"
+                checked = {active === "1"}
               />
-              <label>General Enquiry</label>
+              <label htmlFor="query">General Enquiry</label>
             </div>
 
-            <div className={`query ${active === "2" ? "active" : ""}`}>
+            <div
+              onClick={() => handleActive("2")}
+              className={`query ${active === "2" ? "active" : ""}`}
+            >
               <input
                 ref={radioRef2}
-                onClick={() => handleActive("2")}
                 type="radio"
                 name="query"
                 value="2"
                 id="supportRequest"
+                checked = {active === "2"}
               />
-              <label>Support Request</label>
+              <label htmlFor="query">Support Request</label>
             </div>
           </div>
-          {errorMessage === "4" &&<Error errorMessage="Please select a query type" role="alert" ariaLive="assertive" id="errorMessage" />}
+          {errorMessage === "4" && (
+            <Error
+              errorMessage="Please select a query type"
+              role="alert"
+              ariaLive="assertive"
+              id="errorMessage"
+            />
+          )}
         </div>
 
         {/* Message */}
@@ -169,18 +212,32 @@ const Form = () => {
             name="message"
             id="message"
           ></textarea>
-          {errorMessage === "5" && <Error errorMessage="This field is required" role="alert" ariaLive="assertive" id="errorMessage" />}
+          {errorMessage === "5" && (
+            <Error
+              errorMessage="This field is required"
+              role="alert"
+              ariaLive="assertive"
+              id="errorMessage"
+            />
+          )}
         </div>
 
         {/* Consent */}
         <div className="input-div" id="6">
           <div className="consent">
             <input ref={consentRef} type="checkbox" />
-          <p>
-            I consent to being contacted by the team <span>*</span>
-          </p>
+            <p>
+              I consent to being contacted by the team <span>*</span>
+            </p>
           </div>
-          {errorMessage === "6" && <Error errorMessage="To submit this form, please consent to being contacted." role="alert" ariaLive="assertive" id="errorMessage" />}
+          {errorMessage === "6" && (
+            <Error
+              errorMessage="To submit this form, please consent to being contacted."
+              role="alert"
+              ariaLive="assertive"
+              id="errorMessage"
+            />
+          )}
         </div>
 
         <button type="submit">Submit</button>
