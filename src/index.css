@@ -10,6 +10,12 @@ html, body{
   background-color: hsl(148, 38%, 91%);
 }
 
+@media (max-width: 767px){
+  html, body{
+    height: auto;
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -52,6 +58,7 @@ label{
   animation: flicker 1s forwards;
 }
 
+/* flickering effect for errors */
 @keyframes flicker{
   0%{
     border-color: red;
@@ -192,7 +199,7 @@ button:hover{
   color: white;
   border-radius: 5px;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   top: 2%;
   left: 50%;
   transform: translateX(-50%);
